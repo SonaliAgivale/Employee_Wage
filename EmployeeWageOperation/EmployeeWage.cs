@@ -8,8 +8,9 @@ namespace EmployeeWageOperation
 {
     internal class EmployeeWage
     {
-        int Is_Full_Time = 1;
-        int Is_Part_Time = 2;
+        public const int Is_Full_Time = 1;
+        public const int Is_Part_Time = 2;
+        public const int Emp_Rate_Per_Hour = 20;
         Random random = new Random();
         public void operation()
         {
@@ -25,7 +26,6 @@ namespace EmployeeWageOperation
 
         }
         //Checking Employee Daily Wage
-        int Emp_Rate_Per_Hour = 20;
         int EmpHours = 0;
         int EmpWage = 0;
         public void DailyWage()
@@ -61,6 +61,25 @@ namespace EmployeeWageOperation
             }
             EmpWage = EmpHours * Emp_Rate_Per_Hour;
             Console.WriteLine("Employee Daily Wage are :" + EmpWage);
+        }
+        //Use Switch case statement for Employee Wage
+        public void IsPartTime()
+        {
+            int empCheck = random.Next(0, 2);
+            switch (empCheck)
+            {
+                case Is_Part_Time:
+                    EmpHours = 4;
+                    break;
+                case Is_Full_Time:
+                    EmpHours = 8;
+                    break;
+                default:
+                    EmpHours = 0;
+                    break;
+            }
+            EmpWage = EmpHours * Emp_Rate_Per_Hour;
+            Console.WriteLine("Employee Daily Wage using Switch case statement are:" + EmpWage);
         }
     }
 }
