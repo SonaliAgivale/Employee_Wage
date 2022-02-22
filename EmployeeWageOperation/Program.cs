@@ -10,6 +10,9 @@ namespace EmployeeWageOperation
     {
         static void Main(string[] args)
         {
+            EmployeeWage empWage = new EmployeeWage();
+            empWage.DailyWage();
+            Console.ReadKey();
         }
     }
 }
