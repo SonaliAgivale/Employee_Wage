@@ -11,6 +11,7 @@ namespace EmployeeWageOperation
         public const int Is_Full_Time = 1;
         public const int Is_Part_Time = 2;
         public const int Emp_Rate_Per_Hour = 20;
+        public const int Num_Working_Days = 20;
         Random random = new Random();
         public void operation()
         {
@@ -80,6 +81,37 @@ namespace EmployeeWageOperation
             }
             EmpWage = EmpHours * Emp_Rate_Per_Hour;
             Console.WriteLine("Employee Daily Wage using Switch case statement are:" + EmpWage);
+        }
+
+        //Calculating Employee Wage For Month
+        //creating constant variable i.e Num_Working_Days
+        public void TotalDays()
+        {
+            int EmpHour = 0;
+            int EmpWage = 0;
+            int totalEmpWage = 0;
+
+            for (int day = 0; day < Num_Working_Days; day++)
+            {
+                Random random = new Random();
+                int empCheck = random.Next(0,2);
+                switch (empCheck)
+                {
+                    case Is_Part_Time:
+                        EmpHour = 4;
+                        break;
+                    case Is_Full_Time:
+                        EmpHour = 8;
+                        break;
+                    default:
+                        EmpHour = 0;
+                        break;
+                }
+                EmpWage = EmpHour * Num_Working_Days;
+                totalEmpWage += EmpWage;
+            }
+            Console.WriteLine("Employee wage:" + EmpWage);
+            Console.WriteLine("Total Employee Wage for month:" + totalEmpWage);
         }
     }
 }

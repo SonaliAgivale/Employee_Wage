@@ -11,7 +11,7 @@ namespace EmployeeWageOperation
         static void Main(string[] args)
         {
             EmployeeWage empWage = new EmployeeWage();
-            empWage.IsPartTime();
+            empWage.TotalDays();
             Console.ReadKey();
         }
     }
