@@ -12,6 +12,7 @@ namespace EmployeeWageOperation
         public const int Is_Part_Time = 2;
         public const int Emp_Rate_Per_Hour = 20;
         public const int Num_Working_Days = 20;
+        public const int Max_Hrs_In_Month = 100;
         Random random = new Random();
         public void operation()
         {
@@ -113,5 +114,39 @@ namespace EmployeeWageOperation
             Console.WriteLine("Employee wage:" + EmpWage);
             Console.WriteLine("Total Employee Wage for month:" + totalEmpWage);
         }
+
+        //Calculate Wages till condition of total working hours or days is reached for a month
+        //Assume 100 hours and 20 days
+        //take constatnt variable MAx_hrs_In_Month=100
+        public void MonthlyWage()
+        {
+            int EmpHours = 0;
+            int totalWorkingDays = 0;
+            int totalEmpHrs = 0;
+            while (totalEmpHrs <= Max_Hrs_In_Month && totalWorkingDays < Num_Working_Days)
+            { 
+                totalWorkingDays++;
+                Random random=new Random();
+                int monthCheck = random.Next(0, 3);
+                switch (monthCheck)
+                {
+                    case Is_Part_Time:
+                        EmpHours = 4;
+                        break;
+                    case Is_Full_Time:
+                        EmpHours = 8;
+                        break;
+                    default:
+                        EmpHours = 0;
+                        break;
+                }
+                totalEmpHrs += EmpHours;
+                Console.WriteLine("Days:" + totalWorkingDays + "working hours:" + EmpHours);
+            }
+            int totalEmpWage = totalEmpHrs * Emp_Rate_Per_Hour;
+            Console.WriteLine("Total Employee wage: "+totalEmpWage);
+        }
+        
+    
     }
 }
