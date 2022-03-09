@@ -13,7 +13,9 @@ namespace EmployeeWageOperation
         public const int Emp_Rate_Per_Hour = 20;
         public const int Num_Working_Days = 20;
         public const int Max_Hrs_In_Month = 100;
-        Random random = new Random();
+
+        //make random object as static
+        static Random random = new Random();
         public void operation()
         {
             int empCheck = random.Next(0, 2);
@@ -25,7 +27,6 @@ namespace EmployeeWageOperation
             {
                 Console.WriteLine("Employee is absent");
             }
-
         }
         //Checking Employee Daily Wage
         int EmpHours = 0;
@@ -146,7 +147,5 @@ namespace EmployeeWageOperation
             int totalEmpWage = totalEmpHrs * Emp_Rate_Per_Hour;
             Console.WriteLine("Total Employee wage: "+totalEmpWage);
         }
-        
-    
     }
 }

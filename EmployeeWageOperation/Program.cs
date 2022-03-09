@@ -11,6 +11,7 @@ namespace EmployeeWageOperation
         static void Main(string[] args)
         {
             EmployeeWage empWage = new EmployeeWage();
+            Console.WriteLine("******Monthly Employee Wage******");
             empWage.MonthlyWage();
             Console.ReadKey();
         }
