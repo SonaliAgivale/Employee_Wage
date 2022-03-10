@@ -12,7 +12,14 @@ namespace EmployeeWageOperation
         {
             EmployeeWage empWage = new EmployeeWage();
             Console.WriteLine("******Monthly Employee Wage******");
-            empWage.MonthlyWage();
+            Console.WriteLine("Welcome to Empolyee Wage Computation Program\n");
+
+            empWage.AddCompanyEmpWageToList("Google", 10, 4, 20);
+            empWage.AddCompanyEmpWageToList("Microsoft", 20, 5, 20);
+            empWage.AddCompanyEmpWageToList("Deloitte", 30, 3, 30);
+            empWage.ComputeEmpWage();
+
+            //empWage.CompanyDetails("TCS",10,8);
             Console.ReadKey();
         }
     }
